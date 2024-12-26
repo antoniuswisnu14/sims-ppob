@@ -26,9 +26,11 @@ const LoginPage = () => {
       .then((response) => {
         const token = response.data.data.token;
         storeSessionToken(token);
+        return response.data;
       })
       .catch((error) => {
-        throw error.response.data.message;
+        console.log(error);
+        throw error.response.data?.message;
       });
   };
 
@@ -40,7 +42,7 @@ const LoginPage = () => {
         alert("login berhasil");
       }
     } catch (error) {
-      alert(error);
+      alert(error ? error : "error");
     }
   };
 
