@@ -1,0 +1,43 @@
+.transactionText {
+  font-size: medium;
+  margin: 40px 0;
+}
+
+.cardLayout {
+  display: grid;
+  gap: 20px;
+}
+.cardContentLayout {
+  display: flex;
+  justify-content: space-between;
+}
+.cardTextContent {
+  display: grid;
+  gap: 10px;
+}
+
+.dateAndTimeText {
+  color: #cecece;
+  font-size: small;
+}
+.buttonLayout {
+  width: 1080px;
+}
+
+.ctaButton {
+  width: fit-content;
+  margin: auto;
+  color: rgb(219, 51, 51);
+  margin-bottom: 20px;
+}
+
+.ctaButton:hover {
+  cursor: pointer;
+}
+
+.topUpBalance {
+  color: green;
+}
+.paymentBalance {
+  color: red;
+}

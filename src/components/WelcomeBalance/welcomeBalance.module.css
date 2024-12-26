@@ -1,0 +1,36 @@
+.dashboardLayout {
+  display: flex;
+  justify-content: space-between;
+  margin: 40px 0;
+  height: 130px;
+}
+
+.welcomeLayout {
+  display: grid;
+  place-content: space-between;
+}
+
+.balanceLayout {
+  position: relative;
+}
+
+.balanceBackgroundLayout {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.balanceTextLayout {
+  position: absolute;
+  z-index: 1;
+  bottom: 20px;
+  left: 16px;
+  color: white;
+  display: grid;
+  gap: 10px;
+}
+.balanceCTA {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}

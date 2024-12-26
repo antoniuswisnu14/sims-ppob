@@ -1,0 +1,32 @@
+.navbarLayout {
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+  height: fit-content;
+  padding: 20px 0;
+  margin: auto;
+  max-width: 1080px;
+  align-items: center;
+}
+
+.navbarBorder {
+  border-bottom: 1px solid #cecece;
+}
+
+.logoLayout {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: smaller;
+}
+
+.navlinkLayout {
+  display: flex;
+  gap: 40px;
+}
+.ctaBefore {
+  color: black;
+}
+.ctaAfter {
+  color: rgb(219, 51, 51);
+}
