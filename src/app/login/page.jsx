@@ -20,28 +20,27 @@ const LoginPage = () => {
     formState: { errors },
   } = useForm();
 
-  const fetchData = async (data) => {
+  const handleLogin = async (data) => {
     return await axios
       .post("https://take-home-test-api.nutech-integrasi.com/login", data)
       .then((response) => {
         const token = response.data.data.token;
         storeSessionToken(token);
-        return response.data;
       })
       .catch((error) => {
-        throw error;
+        throw error.response.data.message;
       });
   };
 
   const onSubmit = async (data) => {
     try {
-      const result = await fetchData(data);
+      const result = await handleLogin(data);
       if (result.message === "Login Sukses") {
         router.push("/");
         alert("login berhasil");
       }
     } catch (error) {
-      alert("Username atau password tidak valid");
+      alert(error);
     }
   };
 

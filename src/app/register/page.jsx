@@ -10,11 +10,12 @@ import Link from "next/link";
 import Button from "../../components/ui/Button/button";
 import { fetchData } from "../../utils/utils";
 import axios from "axios";
+import { useRouter } from "next/navigation";
 
 const RegistrationPage = () => {
   const [showPassword, setShowPassword] = React.useState(false);
   const [showConPassword, setShowConPassword] = React.useState(false);
-
+  const router = useRouter();
   const {
     register,
     handleSubmit,
@@ -31,23 +32,19 @@ const RegistrationPage = () => {
         data
       )
       .then((response) => {
-        console.log("Success:", response.data);
-        return response.data; // Returning the data from response if needed
+        alert(response.data.message);
+        router.push("/login");
       })
       .catch((error) => {
-        console.error("Error:", error);
-        throw error; // Rethrow the error so the calling function can handle it
+        throw error.response.data.message;
       });
   };
 
-  // onSubmit function to handle form data submission
   const onSubmit = async (data) => {
     try {
-      const result = await fetchData(data);
-      console.log("Data submitted successfully:", result);
+      await fetchData(data);
     } catch (error) {
-      console.error("Failed to submit data:", error);
-      // Optionally, handle the error (e.g., display a user-friendly message)
+      alert(error);
     }
   };
 
@@ -139,7 +136,7 @@ const RegistrationPage = () => {
           {errors.password && (
             <p className={styles.error}>{errors.password.message}</p>
           )}
-          {/* <div className={styles.inputFormBorder}>
+          <div className={styles.inputFormBorder}>
             <LockKeyhole strokeWidth={3} size={15} color="#cecece" />
             <input
               type={showConPassword ? "text" : "password"}
@@ -162,7 +159,7 @@ const RegistrationPage = () => {
           </div>
           {errors.konfirmasiPassword && (
             <p className={styles.error}>{errors.konfirmasiPassword.message}</p>
-          )} */}
+          )}
           <div className={styles.submitButton}>
             <Button type="submit">Registrasi</Button>
           </div>

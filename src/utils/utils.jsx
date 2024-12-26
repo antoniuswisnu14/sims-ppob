@@ -9,8 +9,6 @@ export function storeSessionToken(apiToken) {
       secure: process.env.NODE_ENV === "production",
       sameSite: "Lax",
     });
-
-    console.log("Session token stored successfully.");
   } catch (error) {
     console.error("Error storing session token:", error);
     throw new Error("Failed to store session token");

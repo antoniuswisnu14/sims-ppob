@@ -30,7 +30,7 @@ const TransactionPage = () => {
               created_on: new Date(value.created_on),
             } || [])
         );
-        console.log(records);
+
         setTopUpDataHistory(records);
       } else {
         console.error("Unexpected response format:", response);
@@ -39,8 +39,6 @@ const TransactionPage = () => {
       console.error("Error fetching data:", error);
     }
   }
-
-  console.log(topUpDataHistory);
 
   return (
     <div>
