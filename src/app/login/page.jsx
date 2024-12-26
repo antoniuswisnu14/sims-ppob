@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import styles from "./login.module.css";
 import Image from "next/image";
 
-import { AtSign, Eye, LockKeyhole, User } from "lucide-react";
+import { AtSign, Eye, LockKeyhole } from "lucide-react";
 import Link from "next/link";
 import Button from "../../components/ui/Button/button";
 import axios from "axios";
@@ -14,11 +14,7 @@ import { storeSessionToken } from "../../utils/utils";
 
 const LoginPage = () => {
   const router = useRouter();
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
+  const { register, handleSubmit } = useForm();
 
   const handleLogin = async (data) => {
     return await axios
@@ -51,7 +47,7 @@ const LoginPage = () => {
       <div className={styles.loginFormLayout}>
         <h1 className={styles.titleForm}>
           <span>
-            <Image src={"/logo.png"} alt="logo" width={20} height={20} />
+            <Image src={"/logo.PNG"} alt="logo" width={20} height={20} />
           </span>
           SIMS PPOB
         </h1>
